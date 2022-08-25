@@ -1,0 +1,48 @@
+:root{
+	--bg: #000;
+	--font: 'Toren';
+	--text: #fff;
+	--border: 1px solid var(--text);
+	--padding_v: 0.5rem;
+	--padding_h: 1rem;
+	--margin: 3rem;
+	--margin_2x: calc(var(--margin) * 2);
+}
+
+html,
+body{
+	font-size: 16px;
+	margin: 0;
+	font-family: var(--font), monospace;
+	background: var(--bg);
+	color: var(--text);
+}
+
+h1,
+h2,
+h3,
+h4{
+	font-size: 1rem;
+	font-weight: normal;
+}
+
+input,
+button{
+	font-size: 1rem;
+	font-family: var(--font), monospace;
+	background: var(--bg);
+	color: var(--text);
+	border: var(--border);
+	cursor: pointer;
+}
+
+header{
+	position: fixed;
+	top: 0;
+	left: var(--margin);
+	width: calc(100% - var(--margin_2x));
+	border-bottom: var(--border);
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+}
