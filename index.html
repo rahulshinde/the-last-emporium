@@ -4,53 +4,255 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>The Last Emporium - Homepage</title>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   crossorigin=""/>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/homepage.css">
 </head>
 <body>
 	<header>
 		<h1>thelastemporium.hk</h1>
-		<nav>
-			<button>info</button>
-			<button>login</button>
+		<div class='spacer'></div>
+		<span id='datetime'></span>
+		<div class='spacer'></div>
+		<nav id='homepage_nav'>
+			<button id='info_button' data-target='info_modal'>info</button>
+			<button id='login_button' class='selected' data-target='login_modal'>login</button>
 		</nav>
 	</header>
 
 	<main>
-		<section id='map_container'></section>
+		<section id='map'></section>
 
-		<div id='login_modal'>
-			<input type="text" name="">
-			<input type="password" name="">
-			<button>login</button>
-			<button>view map</button>
+		<div id='login_modal' class='visible'>
+			<h1 class='FT88'>
+					The Last Emporium
+				</h1>
+			<div class='input_line'>
+				<span>Account ID:</span>
+				<input type="text" name="">
+			</div>
+			<div class='input_line'>
+				<span>Password:</span>
+				<input type="password" name="">
+			</div>
+			<div id='login_buttons'>
+				<button id='login'>login</button>
+				<div class='spacer'></div>
+				<button id='view_map'>view map</button>
+			</div>
 		</div>
 
-		<div id='info_modal'>
+		<div id='info_modal' class="">
+			<div class='info_header'>
+				<h1 class='FT88'>
+					The Last Emporium
+				</h1>
+				<div class='spacer'></div>
+				<button id='close_info'>close</button>				
+			</div>
 			<p>
-				Info text
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 			</p>
 
-			<button>close</button>
+			<p>
+				鑑於對人類家庭所有成員的固有尊嚴及其平等的和不移的權利的承認，乃是世界自由、正義與和平的基礎， 鑑於對人權的無視和侮蔑已發展為野蠻暴行，這些暴行沾污了人類的良心，而一個人人享有言論和信仰自由並免予恐懼和匱乏的世界的來臨，已被宣布為普通人民的最高願望， 鑑於為使人類不致迫不得已鋌而走險對暴政和壓迫進行反叛，有必要使人權受法治的保護， 鑑於有必要促進各國間友好關係的發展， 鑑於各聯合國國家的人民已在聯合國憲章中重申他們對基本人權、人格尊嚴和價值以及男女平等權利的信念，並痩心促成較大自由中的社會進步和生活水平的改善， 鑑於各會員國並已誓願同聯合國合作以促進對人權和基本自由的普遍尊重和遵行， 鑑於對這些權利和自由的普遍了解對於這個誓願的充分實現具有很大的重要性
+			</p>
 		</div>
 	</main>
 
 	<footer id='image_marquee'>
-		<div class='media_wrapper'>
-			<img src="">
-			<span class='object_name'>
-				Object Name / ID
-			</span>
-			<span class='datetime'>
-				2022-08-25T17:34:38Z
-			</span>
-			<span class='location'>
-				22.396427°, 114.109497°
-			</span>
-			<span class='caption'>
-				Lorem ipsum caption text
-			</span>
+		<div class='media_outer_wrapper'>
+			<div class='media_wrapper'>
+				<img src="images/tle1.jpg">
+				<span class='object_name'>
+					Object Name / ID
+				</span>
+				<span class='datetime'>
+					2022-08-25T17:34:38Z
+				</span>
+				<span class='location'>
+					22.396427°, 114.109497°
+				</span>
+			</div>
+
+			<div class='media_wrapper'>
+				<img src="images/tle2.jpg">
+				<span class='object_name'>
+					Object Name / ID
+				</span>
+				<span class='datetime'>
+					2022-08-25T17:34:38Z
+				</span>
+				<span class='location'>
+					22.396427°, 114.109497°
+				</span>
+			</div>
+
+			<div class='media_wrapper'>
+				<img src="images/tle3.jpg">
+				<span class='object_name'>
+					Object Name / ID
+				</span>
+				<span class='datetime'>
+					2022-08-25T17:34:38Z
+				</span>
+				<span class='location'>
+					22.396427°, 114.109497°
+				</span>
+			</div>
+
+			<div class='media_wrapper'>
+				<img src="images/tle4.jpg">
+				<span class='object_name'>
+					Object Name / ID
+				</span>
+				<span class='datetime'>
+					2022-08-25T17:34:38Z
+				</span>
+				<span class='location'>
+					22.396427°, 114.109497°
+				</span>
+			</div>
+
+			<div class='media_wrapper'>
+				<img src="images/tle5.jpg">
+				<span class='object_name'>
+					Object Name / ID
+				</span>
+				<span class='datetime'>
+					2022-08-25T17:34:38Z
+				</span>
+				<span class='location'>
+					22.396427°, 114.109497°
+				</span>
+			</div>
+
+			<div class='media_wrapper'>
+				<img src="images/tle6.jpg">
+				<span class='object_name'>
+					Object Name / ID
+				</span>
+				<span class='datetime'>
+					2022-08-25T17:34:38Z
+				</span>
+				<span class='location'>
+					22.396427°, 114.109497°
+				</span>
+			</div>
+
+			<div class='media_wrapper'>
+				<img src="images/tle7.jpg">
+				<span class='object_name'>
+					Object Name / ID
+				</span>
+				<span class='datetime'>
+					2022-08-25T17:34:38Z
+				</span>
+				<span class='location'>
+					22.396427°, 114.109497°
+				</span>
+			</div>
+		</div>
+
+		<div class='media_outer_wrapper'>
+			<div class='media_wrapper'>
+				<img src="images/tle1.jpg">
+				<span class='object_name'>
+					Object Name / ID
+				</span>
+				<span class='datetime'>
+					2022-08-25T17:34:38Z
+				</span>
+				<span class='location'>
+					22.396427°, 114.109497°
+				</span>
+			</div>
+
+			<div class='media_wrapper'>
+				<img src="images/tle2.jpg">
+				<span class='object_name'>
+					Object Name / ID
+				</span>
+				<span class='datetime'>
+					2022-08-25T17:34:38Z
+				</span>
+				<span class='location'>
+					22.396427°, 114.109497°
+				</span>
+			</div>
+
+			<div class='media_wrapper'>
+				<img src="images/tle3.jpg">
+				<span class='object_name'>
+					Object Name / ID
+				</span>
+				<span class='datetime'>
+					2022-08-25T17:34:38Z
+				</span>
+				<span class='location'>
+					22.396427°, 114.109497°
+				</span>
+			</div>
+
+			<div class='media_wrapper'>
+				<img src="images/tle4.jpg">
+				<span class='object_name'>
+					Object Name / ID
+				</span>
+				<span class='datetime'>
+					2022-08-25T17:34:38Z
+				</span>
+				<span class='location'>
+					22.396427°, 114.109497°
+				</span>
+			</div>
+
+			<div class='media_wrapper'>
+				<img src="images/tle5.jpg">
+				<span class='object_name'>
+					Object Name / ID
+				</span>
+				<span class='datetime'>
+					2022-08-25T17:34:38Z
+				</span>
+				<span class='location'>
+					22.396427°, 114.109497°
+				</span>
+			</div>
+
+			<div class='media_wrapper'>
+				<img src="images/tle6.jpg">
+				<span class='object_name'>
+					Object Name / ID
+				</span>
+				<span class='datetime'>
+					2022-08-25T17:34:38Z
+				</span>
+				<span class='location'>
+					22.396427°, 114.109497°
+				</span>
+			</div>
+
+			<div class='media_wrapper'>
+				<img src="images/tle7.jpg">
+				<span class='object_name'>
+					Object Name / ID
+				</span>
+				<span class='datetime'>
+					2022-08-25T17:34:38Z
+				</span>
+				<span class='location'>
+					22.396427°, 114.109497°
+				</span>
+			</div>
 		</div>
 	</footer>
+
+	 <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
+	<script type="text/javascript" src="js/home.js"></script>
 </body>
 </html>
